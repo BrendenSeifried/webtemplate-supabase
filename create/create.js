@@ -8,7 +8,7 @@ form.addEventListener('submit', async e => {
     e.preventDefault();
     const formData = new FormData(form);
     const dawi = { name: formData.get('client-name'), workshopId: formData.get('workshop-id') };
-    console.log(dawi);
+    //console.log(dawi);
     await createClient(dawi);
     
     form.reset();

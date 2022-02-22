@@ -15,10 +15,10 @@ logoutButton.addEventListener('click', () => {
     logout();
 });
 
-async function displayWorkShop() {
+async function displayWorkShop(workShops) {
 
     workshopEl.textContent = '';
-    const workShops = await getWorkshops();
+    //const workShops = await getWorkshops();
 
     for (let workShop of workShops) {
         const workEl = document.createElement('div');
@@ -27,7 +27,7 @@ async function displayWorkShop() {
 
         dwarvesEl.classList.add('dawi');
         workEl.classList.add('workshop');
-        nameEl.textContent = workShop.name;
+        nameEl.textContent = workShop.wname;
 
         for (let client of workShop.clients) {
             const dawiEl = document.createElement('div');
@@ -37,7 +37,9 @@ async function displayWorkShop() {
                 await deleteClient(client.id);
 
                 const newWorkshops = await getWorkshops();
+                console.log(workShops);
                 displayWorkShop(newWorkshops);
+                
             });
             dwarvesEl.append(dawiEl);
         }

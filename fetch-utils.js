@@ -42,7 +42,7 @@ export async function logout() {
 export async function getWorkshops() {
     // fetch all families and their bunnies
     const response = await client.from('workshops').select('*, clients(*)').match({ 'clients.user_id': client.auth.session().user.id });
-    console.log(response);
+    //console.log(client.auth.session().user.id);
     return checkError(response);
 }
 
@@ -56,7 +56,7 @@ export async function deleteClient(id) {
 export async function createClient(banana) {
     // create a bunny using the bunny argument
     const response = await client.from('clients').insert({ name:banana.name, workshop_id: banana.workshopId });
-    console.log(response, 'testing');
+   // console.log(response, 'testing');
     return checkError(response);
 }
 
