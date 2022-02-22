@@ -1,1 +1,25 @@
-/* add home page styles here */
+.dawi{
+    margin: 10px;
+  
+    padding: 10px;
+    width: 250px;
+
+}
+
+.workshop{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(245, 175, 84);
+    margin: 10px;
+    border: solid 3px black;
+    padding: 10px;
+    width: 300px;
+    
+} 
+
+ .workshop-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+} 
