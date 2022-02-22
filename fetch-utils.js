@@ -37,6 +37,22 @@ export async function logout() {
     return (window.location.href = '../');
 }
 
+//-------------------My Stuff-----------------
+
+export async function getWorkshops() {
+    // fetch all families and their bunnies
+    const response = await client.from('workshops').select('*, clients(*)').match({ 'clients.user_id': client.auth.session().user.id });
+    console.log(response);
+    return checkError(response);
+}
+
+export async function deleteBunny(id) {
+    // delete a single bunny using the id argument
+    const response = await client.from('fuzzy_bunnies').delete().match({ id:id }).single();
+    return checkError(response);
+}
+
+
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;
 // }
