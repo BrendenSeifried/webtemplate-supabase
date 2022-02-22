@@ -53,9 +53,9 @@ export async function deleteClient(id) {
 }
 
 
-export async function createClient(client) {
+export async function createClient(banana) {
     // create a bunny using the bunny argument
-    const response = await client.from('clients').insert({ name:client.name, workshop_id: client.workshopId });
+    const response = await client.from('clients').insert({ name:banana.name, workshop_id: banana.workshopId });
     console.log(response, 'testing');
     return checkError(response);
 }
