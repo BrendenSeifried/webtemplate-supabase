@@ -1,5 +1,5 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://kwuprxiphonycrgvghdh.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt3dXByeGlwaG9ueWNyZ3ZnaGRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDQ0MzUzMzEsImV4cCI6MTk2MDAxMTMzMX0.62oTUOOAQuTrdr4remhHfeCx6BxTyHszj7IU3dya7f8';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -48,11 +48,18 @@ export async function getWorkshops() {
 
 export async function deleteBunny(id) {
     // delete a single bunny using the id argument
-    const response = await client.from('fuzzy_bunnies').delete().match({ id:id }).single();
+    const response = await client.from('clients').delete().match({ id:id }).single();
     return checkError(response);
 }
 
 
-// function checkError({ data, error }) {
-//     return error ? console.error(error) : data;
-// }
+export async function createClient(client) {
+    // create a bunny using the bunny argument
+    const response = await client.from('clients').insert({ name:client.name, workshop_id: client.workshopId });
+    console.log(response, 'testing');
+    return checkError(response);
+}
+
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
+}
