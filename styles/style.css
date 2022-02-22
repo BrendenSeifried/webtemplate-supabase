@@ -28,6 +28,21 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+
+
+    
+
+        background-color: antiquewhite;
+        margin: 10px;
+        border: solid 3px black;
+        padding: 10px;
+    width: 100%;
+    
+    
+      
+
+
+
 }
 
 section {

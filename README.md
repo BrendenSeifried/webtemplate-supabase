@@ -1,5 +1,13 @@
 ## The Golden Rule:
 
+1) make supabase 
+2) create fetch utils 
+3) make workshop page
+4) make create page
+5) apps js page
+
+
+
 🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
 
 If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
