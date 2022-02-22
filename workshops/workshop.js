@@ -27,7 +27,7 @@ async function displayWorkShop() {
 
         dwarvesEl.classList.add('dwarves');
         workEl.classList.add('workshop');
-        nameEl.textContent = workShop.name;
+        nameEl.textContent = workShop.wname;
 
         for (let client of workShop.clients) {
             const dawiEl = document.createElement('div');
