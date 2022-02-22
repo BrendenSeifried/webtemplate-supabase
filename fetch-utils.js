@@ -15,7 +15,7 @@ export function checkAuth() {
 
 export function redirectIfLoggedIn() {
     if (getUser()) {
-        location.replace('./other-page');
+        location.replace('./workshops');
     }
 }
 
@@ -46,7 +46,7 @@ export async function getWorkshops() {
     return checkError(response);
 }
 
-export async function deleteBunny(id) {
+export async function deleteClient(id) {
     // delete a single bunny using the id argument
     const response = await client.from('clients').delete().match({ id:id }).single();
     return checkError(response);
